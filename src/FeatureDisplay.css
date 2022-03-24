@@ -6,9 +6,18 @@
 
 h1 {
   position: absolute;
-  top: 90%;
-  left: 40%;
+  top: 85vh;
+  left: 40vw;
   font-family: 'Questrial';
   font-size: 48px;
+  color: white;
+}
+
+h3 {
+  text-align: left;
+  position: absolute;
+  margin-left: 2vw;
+  font-family: 'Questrial';
+  font-size: 30px;
   color: white;
 }
