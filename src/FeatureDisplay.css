@@ -1,0 +1,14 @@
+.featureImage {
+  height: 100vh;
+  width: 100vw;
+  background: fixed;
+}
+
+h1 {
+  position: absolute;
+  top: 90%;
+  left: 40%;
+  font-family: 'Questrial';
+  font-size: 48px;
+  color: white;
+}
