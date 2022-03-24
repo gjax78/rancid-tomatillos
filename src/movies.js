@@ -4,7 +4,7 @@ import './movies.css'
 import movieData from './movieData'
 
 const Movies = ({ movieData }) => {
-  const movies = movieData[0].movies
+  const movies = movieData.movies
 
   const movieCards = movies.map(movie => {
     return (
