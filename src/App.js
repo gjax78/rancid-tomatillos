@@ -5,12 +5,13 @@ import MovieCard from './movieCard'
 import Movies from './movies'
 import React, { Component } from 'react'
 import Header from './Header'
+import FeatureDisplay from './FeatureDisplay'
 
 class App extends Component {
   constructor() {
     super()
     this.state = {
-      movieData: [movieData]
+      movieData: movieData
     }
   }
 
@@ -18,6 +19,7 @@ class App extends Component {
     return (
       <main className='App'>
         <Header />
+        <FeatureDisplay />
         <Movies movieData={this.state.movieData}/>
       </main>
     )
