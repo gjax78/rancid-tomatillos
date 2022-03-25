@@ -1,31 +1,23 @@
-import React, {Component} from 'react';
+import React from 'react';
 import './MovieInfo.css';
+import movieData from './movieData';
 
 
-class MovieInfo extends Component {
-  constructor() {
-    super();
-    this.state = {
-
-    }
-  }
-
-  render() {
+const MovieInfo = () => {
     return (
-      <section className='single-view'>
-        <img className='movie-background' src='' alt=''/>
-        <h2>movie title</h2>
-        <p>release date</p>
-        <p>avg rating</p>
-        <p>budget</p>
-        <p>revenue</p>
-        <p>runtime</p>
-        <p>genre</p>
-        <p>tagline</p>
-        <p>overview</p>
-      </section>
+        <section className='single-view'>
+          <img className='movie-background' src='' alt=''/>
+          <h2>fuckit</h2>
+          <p>{movieData.release_date}</p>
+          <p>a</p>
+          <p>budget</p>
+          <p>revenue</p>
+          <p>runtime</p>
+          <p>genre</p>
+          <p>tagline</p>
+          <p>overview</p>
+        </section>
     )
   }
-}
 
 export default MovieInfo;
