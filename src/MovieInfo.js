@@ -3,13 +3,14 @@ import './MovieInfo.css';
 import movieData from './movieData';
 
 
-const MovieInfo = () => {
+const MovieInfo = ({ movie }) => {
+  console.log(movie)
     return (
         <section className='single-view'>
-          <img className='movie-background' src='' alt=''/>
-          <h2>fuckit</h2>
-          <p>{movieData.release_date}</p>
-          <p>a</p>
+          <img className='movie-background' src={movie.poster_path} alt=''/>
+          <h2>{movie.title}</h2>
+          <p>{movie.release_date}</p>
+          <p>{movie.average_rating}</p>
           <p>budget</p>
           <p>revenue</p>
           <p>runtime</p>
