@@ -1,6 +1,6 @@
 // import logo from './logo.svg';
 import './App.css';
-import movieData from './movieData'
+import apiData from './apiCalls'
 import MovieCard from './movieCard'
 import Movies from './movies'
 import React, { Component } from 'react'
@@ -14,6 +14,15 @@ class App extends Component {
     this.state = {
       movieData: movieData.movies,
       selectedMovie: null
+    }
+  }
+
+
+  componentDidMount = () => {
+    return apiData
+    .then(data => this.setSState({movieData: data}))
+    .catch((error)) => {
+      console.log('Error:', error)
     }
   }
 
