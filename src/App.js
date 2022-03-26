@@ -17,7 +17,7 @@ class App extends Component {
     }
   }
 
-  handleChange = (id) => {
+  showSingleMovie = (id) => {
     const singleMovie = this.state.movieData.find(movie => {
       return movie.id === id
     })
@@ -36,7 +36,7 @@ class App extends Component {
         {this.state.selectedMovie ? <MovieInfo movie={this.state.selectedMovie}/> :
         <Movies
         movieData={this.state.movieData}
-        handleChange={this.handleChange}
+        showSingleMovie={this.showSingleMovie}
         /> }
       </main>
     )
