@@ -3,7 +3,7 @@ import './MovieInfo.css';
 import movieData from './movieData';
 
 
-const MovieInfo = ({ movie }) => {
+const MovieInfo = ({ movie, showAllMovies }) => {
   console.log(movie)
     return (
         <section className='single-view'>
@@ -17,6 +17,7 @@ const MovieInfo = ({ movie }) => {
           <p>genre</p>
           <p>tagline</p>
           <p>overview</p>
+          <button onClick={() => showAllMovies()}>BACK</button>
         </section>
     )
   }
