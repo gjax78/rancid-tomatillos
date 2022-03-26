@@ -33,7 +33,7 @@ class App extends Component {
       <main className='App'>
         <Header />
         <FeatureDisplay />
-        {this.state.selectedMovie ? <MovieInfo movie={this.state.selectedMovie}/> :
+        {this.state.selectedMovie ? <MovieInfo movie={this.state.selectedMovie} showAllMovies={this.showAllMovies}/> :
         <Movies
         movieData={this.state.movieData}
         showSingleMovie={this.showSingleMovie}
