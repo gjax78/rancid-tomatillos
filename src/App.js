@@ -21,7 +21,11 @@ class App extends Component {
     const singleMovie = this.state.movieData.find(movie => {
       return movie.id === id
     })
-    this.setState({selectedMovie: id})
+    this.setState({selectedMovie: singleMovie})
+  }
+
+  showAllMovies = () => {
+    this.setState({ selectedMovie: null })
   }
 
   render() {
@@ -29,12 +33,11 @@ class App extends Component {
       <main className='App'>
         <Header />
         <FeatureDisplay />
+        {this.state.selectedMovie ? <MovieInfo movie={this.state.selectedMovie}/> :
         <Movies
         movieData={this.state.movieData}
         handleChange={this.handleChange}
-        />
-        <MovieInfo
-        />
+        /> }
       </main>
     )
   }
