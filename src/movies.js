@@ -4,9 +4,9 @@ import './movies.css'
 import movieData from './movieData'
 import MovieInfo from './MovieInfo'
 
-const Movies = ({ movieData, handleChange }) => {
+const Movies = ({ movieData, showSingleMovie }) => {
   // const movies = movieData.movies
-// console.log(handleChange)
+// console.log(showSingleMovie)
   const movieCards = movieData.map(movie => {
     return (
       <MovieCard
@@ -14,7 +14,7 @@ const Movies = ({ movieData, handleChange }) => {
         poster_path={movie.poster_path}
         id={movie.id}
         key={movie.id}
-        handleChange={handleChange}
+        showSingleMovie={showSingleMovie}
       />
     )
   })
