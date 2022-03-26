@@ -1,10 +1,7 @@
 import React from 'react';
 import './MovieInfo.css';
-// import movieData from './movieData';
-
 
 const MovieInfo = ({ movie, showAllMovies }) => {
-  console.log(movie)
     return (
         <section className='single-view'>
           <img className='movie-background' src={movie.poster_path} alt=''/>
