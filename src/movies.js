@@ -1,11 +1,11 @@
 import React from 'react'
 import MovieCard from './movieCard'
 import './movies.css'
-import apiData from './apiCalls'
 import MovieInfo from './MovieInfo'
 
-const Movies = ({ apiData.allMovieData(), showSingleMovie }) => {
-  const movieCards = apiData.allMovieData().map(movie => {
+
+const Movies = ({ movieData, showSingleMovie }) => {
+  const movieCards = movieData.map(movie => {
     return (
       <MovieCard
         title={movie.title}
