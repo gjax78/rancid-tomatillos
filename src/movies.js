@@ -9,6 +9,7 @@ const Movies = ({ movieData, handleChange }) => {
 // console.log(handleChange)
   const movieCards = movieData.map(movie => {
     return (
+      <div>
       <MovieCard
         title={movie.title}
         poster_path={movie.poster_path}
@@ -16,12 +17,14 @@ const Movies = ({ movieData, handleChange }) => {
         key={movie.id}
         handleChange={handleChange}
       />
+      </div>
     )
   })
 
   return (
     <div className='movies-container'>
       {movieCards}
+      <a href="#section1" class="arrow__btn right-arrow">›</a>
     </div>
   )
 }
