@@ -1,4 +1,3 @@
-// import logo from './logo.svg';
 import './App.css';
 import apiData from './apiCalls'
 import MovieCard from './movieCard'
@@ -8,7 +7,6 @@ import Header from './Header'
 import FeatureDisplay from './FeatureDisplay'
 import MovieInfo from './MovieInfo'
 
-console.log(apiData.movies)
 
 class App extends Component {
   constructor() {
@@ -19,7 +17,6 @@ class App extends Component {
     }
   }
 
-
   componentDidMount = () => {
     apiData.allMovieData()
     .then(data => this.setState({movieData: data.movies}))
@@ -29,10 +26,11 @@ class App extends Component {
   }
 
   showSingleMovie = (id) => {
-    const singleMovie = this.state.movieData.find(movie => {
-      return movie.id === id
+    const singleMovie = apiData.singleMovieData(id)
+    .then(movie => this.setState({selectedMovie: movie.movie}))
+    .catch((error) => {
+      console.log('Error:', error)
     })
-    this.setState({selectedMovie: singleMovie})
   }
 
   showAllMovies = () => {
