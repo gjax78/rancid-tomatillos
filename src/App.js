@@ -1,6 +1,5 @@
-// import logo from './logo.svg';
 import './App.css';
-import movieData from './movieData'
+import apiData from './apiCalls'
 import MovieCard from './movieCard'
 import Movies from './movies'
 import React, { Component } from 'react'
@@ -8,20 +7,30 @@ import Header from './Header'
 import FeatureDisplay from './FeatureDisplay'
 import MovieInfo from './MovieInfo'
 
+
 class App extends Component {
   constructor() {
     super()
     this.state = {
-      movieData: movieData.movies,
+      movieData: [],
       selectedMovie: null
     }
   }
 
-  showSingleMovie = (id) => {
-    const singleMovie = this.state.movieData.find(movie => {
-      return movie.id === id
+  componentDidMount = () => {
+    apiData.allMovieData()
+    .then(data => this.setState({movieData: data.movies}))
+    .catch((error) => {
+      console.log('Error:', error)
     })
-    this.setState({selectedMovie: singleMovie})
+  }
+
+  showSingleMovie = (id) => {
+    const singleMovie = apiData.singleMovieData(id)
+    .then(movie => this.setState({selectedMovie: movie.movie}))
+    .catch((error) => {
+      console.log('Error:', error)
+    })
   }
 
   showAllMovies = () => {
@@ -33,7 +42,8 @@ class App extends Component {
       <main className='App'>
         <Header />
         <FeatureDisplay />
-        {this.state.selectedMovie ? <MovieInfo movie={this.state.selectedMovie} showAllMovies={this.showAllMovies}/> :
+        {this.state.selectedMovie ? <MovieInfo movie={this.state.selectedMovie}
+        showAllMovies={this.showAllMovies}/> :
         <Movies
         movieData={this.state.movieData}
         showSingleMovie={this.showSingleMovie}

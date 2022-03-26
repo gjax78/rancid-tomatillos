@@ -1,12 +1,10 @@
 import React from 'react'
 import MovieCard from './movieCard'
 import './movies.css'
-import movieData from './movieData'
 import MovieInfo from './MovieInfo'
 
+
 const Movies = ({ movieData, showSingleMovie }) => {
-  // const movies = movieData.movies
-// console.log(showSingleMovie)
   const movieCards = movieData.map(movie => {
     return (
       <MovieCard
