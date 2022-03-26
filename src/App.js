@@ -8,22 +8,24 @@ import Header from './Header'
 import FeatureDisplay from './FeatureDisplay'
 import MovieInfo from './MovieInfo'
 
+console.log(apiData.movies)
+
 class App extends Component {
   constructor() {
     super()
     this.state = {
-      movieData: movieData.movies,
+      movieData: [],
       selectedMovie: null
     }
   }
 
 
   componentDidMount = () => {
-    return apiData
-    .then(data => this.setSState({movieData: data}))
-    .catch((error)) => {
+    apiData.allMovieData()
+    .then(data => this.setState({movieData: data.movies}))
+    .catch((error) => {
       console.log('Error:', error)
-    }
+    })
   }
 
   showSingleMovie = (id) => {
@@ -42,7 +44,8 @@ class App extends Component {
       <main className='App'>
         <Header />
         <FeatureDisplay />
-        {this.state.selectedMovie ? <MovieInfo movie={this.state.selectedMovie} showAllMovies={this.showAllMovies}/> :
+        {this.state.selectedMovie ? <MovieInfo movie={this.state.selectedMovie}
+        showAllMovies={this.showAllMovies}/> :
         <Movies
         movieData={this.state.movieData}
         showSingleMovie={this.showSingleMovie}
