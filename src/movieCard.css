@@ -1,4 +1,11 @@
+
 img {
   height: 300px;
   width: 200px;
+}
+
+.movieCard:hover {
+  filter: brightness(85%);
+  cursor: pointer;
+
 }
