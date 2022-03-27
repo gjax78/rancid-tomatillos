@@ -3,8 +3,19 @@ import './MovieInfo.css';
 
 const MovieInfo = ({ movie, showAllMovies }) => {
     return (
+      <div>
+
+        <section className='single-movie-feature-display'>
+          <img
+            className="movie-backdrop"
+            src={movie.backdrop_path}
+            alt={'current movie backdrop'}
+          />
+        </section>
+
+
         <section className='single-view'>
-          <img className='movie-background' src={movie.poster_path} alt=''/>
+          <img className='movie-poster' src={movie.poster_path} alt=''/>
           <h2>{movie.title}</h2>
           <p>{movie.release_date}</p>
           <p>{movie.average_rating}</p>
@@ -16,6 +27,8 @@ const MovieInfo = ({ movie, showAllMovies }) => {
           <p>{movie.overview}</p>
           <button onClick={() => showAllMovies()}>BACK</button>
         </section>
+
+      </div>
     )
   }
 
