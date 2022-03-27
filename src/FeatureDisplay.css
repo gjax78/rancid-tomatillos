@@ -5,19 +5,16 @@
 }
 
 h1 {
+  text-align: center;
   position: absolute;
   top: 85vh;
-  left: 40vw;
-  font-family: 'Questrial';
+  width: 100%;
   font-size: 48px;
-  color: white;
 }
 
 h3 {
   text-align: left;
   position: absolute;
   margin-left: 2vw;
-  font-family: 'Questrial';
   font-size: 30px;
-  color: white;
 }
