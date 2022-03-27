@@ -3,4 +3,6 @@ html, body {
   background-color: #6E6E73;
   height: 100vh;
   width: 100vw;
+  font-family: 'Questrial';
+  color: white;
 }
