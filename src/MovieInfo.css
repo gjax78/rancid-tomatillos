@@ -20,3 +20,38 @@
   width: 100%;
   font-size: 15px;
 }
+
+.movie-title {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.single-view {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 5%;
+}
+
+.movie-info-container {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+}
+
+.movie-poster {
+  margin: 2%;
+}
+
+.movie-info {
+  margin: 2%;
+  margin-right: 5%;
+}
+
+.movie-overview-container {
+  width: 30%;
+}
+
+.movie-overview {
+  line-height: 1.5em;
+  margin-left: 5%;
+}
