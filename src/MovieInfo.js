@@ -13,7 +13,7 @@ const MovieInfo = ({ movie, showAllMovies }) => {
           />
           <p className='movie-tagline'>{movie.tagline}</p>
           <p className='movie-genres-and-release-date'>{movie.genres} · {movie.release_date.split('-')[0]}</p>
-          <h2>{movie.title}</h2>
+          <h2 className='movie-title'>{movie.title}</h2>
         </section>
 
 
@@ -29,14 +29,13 @@ const MovieInfo = ({ movie, showAllMovies }) => {
               <p className='movie-budget'>{movie.budget}</p>
               <p className='movie-revenue'>{movie.revenue}</p>
               <p className='movie-runtime'>{movie.runtime}</p>
-              <button onClick={() => showAllMovies()}>BACK</button>
             </div>
             <div className='movie-overview-container'>
-              <h3>Overview:</h3>
               <p className='movie-overview'>{movie.overview}</p>
             </div>
           </div>
         </section>
+        <button onClick={() => showAllMovies()}>BACK</button>
 
       </div>
     )
