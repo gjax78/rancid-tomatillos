@@ -13,6 +13,7 @@ const MovieInfo = ({ movie, showAllMovies }) => {
           />
           <p className='movie-tagline'>{movie.tagline}</p>
           <p className='movie-genres-and-release-date'>{movie.genres} · {movie.release_date.split('-')[0]}</p>
+          <button onClick={() => showAllMovies()}>Back</button>
           <h2 className='movie-title'>{movie.title}</h2>
         </section>
 
@@ -24,18 +25,22 @@ const MovieInfo = ({ movie, showAllMovies }) => {
               alt={'current movie poster'}
             />
             <div className='movie-info'>
+              <p className='information-title'>Information</p>
+              <p className='movie-titles'>Release Date</p>
               <p className='movie-release-date'>{movie.release_date}</p>
-              <p className='movie-average-rating'>{movie.average_rating}</p>
-              <p className='movie-budget'>{movie.budget}</p>
-              <p className='movie-revenue'>{movie.revenue}</p>
+              <p className='movie-titles'>Average Rating</p>
+              <p className='movie-average-rating'>{movie.average_rating.toFixed(1)}</p>
+              <p className='movie-titles'>Average Runtime</p>
               <p className='movie-runtime'>{movie.runtime}</p>
+              <p className='movie-titles'>Genres</p>
+              <p className='movie-runtime'>{movie.genres}</p>
             </div>
             <div className='movie-overview-container'>
+              <p className='overview-title'>About</p>
               <p className='movie-overview'>{movie.overview}</p>
             </div>
           </div>
         </section>
-        <button onClick={() => showAllMovies()}>BACK</button>
 
       </div>
     )
