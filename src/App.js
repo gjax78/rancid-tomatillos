@@ -41,7 +41,7 @@ class App extends Component {
     return (
       <main className='App'>
         <Header />
-        {!this.state.selectedMovie ? <FeatureDisplay /> : null}
+        {!this.state.selectedMovie ? <FeatureDisplay movie={this.state.movieData}/> : null}
         {this.state.selectedMovie ? <MovieInfo movie={this.state.selectedMovie}
         showAllMovies={this.showAllMovies}/> :
         <Movies
