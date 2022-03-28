@@ -2,21 +2,21 @@ import React, { Component } from 'react'
 import './FeatureDisplay.css'
 
 class FeatureDisplay extends Component {
-  // constructor() {
-  //   super()
-  //   this.state = {
-  //     src: []
-  //   }
-  // }
+  constructor() {
+    super()
+    this.state = {
+      src: []
+    }
+  }
 
-  // randomizeFeatureDisplay = ({ movie }) => {
-  //   const randomIndex = Math.floor(Math.random() * this.state.src.length);
-  //   const selectedPicture = movie[randomIndex]
-  //
-  //   console.log(selectedPicture)
-  //
-  //   this.setState({ src:  selectedPicture.backdrop_path})
-  // }
+  randomizeFeatureDisplay = ({ movie }) => {
+    const randomIndex = Math.floor(Math.random() * this.state.src.length);
+    const selectedPicture = movie[randomIndex]
+
+    console.log(selectedPicture)
+
+    this.setState({ src:  selectedPicture.backdrop_path})
+  }
 
   render() {
     return (
