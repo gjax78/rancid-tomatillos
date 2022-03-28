@@ -5,4 +5,5 @@ html, body {
   width: 100vw;
   font-family: 'Questrial';
   color: white;
+  overflow-x: hidden;
 }
