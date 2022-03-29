@@ -6,6 +6,7 @@ import React, { Component } from 'react'
 import Header from './Header'
 import FeatureDisplay from './FeatureDisplay'
 import MovieInfo from './MovieInfo'
+import ErrorDisplay from './Error'
 
 
 class App extends Component {
@@ -14,7 +15,8 @@ class App extends Component {
     this.state = {
       movieData: [],
       selectedMovie: null,
-      featureMovie: ''
+      featureMovie: '',
+      error: ''
     }
   }
 
@@ -24,7 +26,8 @@ class App extends Component {
       movieData: data.movies,
       featureMovie: data.movies[Math.floor(Math.random() * data.movies.length)]}))
     .catch((error) => {
-      console.log('Error:', error)
+      this.setState({error: error})
+      // console.log('Error:', error)
     })
   }
 
@@ -53,6 +56,7 @@ class App extends Component {
         movieData={this.state.movieData}
         showSingleMovie={this.showSingleMovie}
         /> }
+        <ErrorDisplay error={this.state.error} />
       </main>
     )
   }
