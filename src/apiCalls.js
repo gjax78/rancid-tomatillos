@@ -1,9 +1,9 @@
 const apiData = {
   allMovieData() {
-    return fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
+    return fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/`)
     .then(response => {
       if(!response.ok) {
-        throw new Error('Refresh browser')
+        throw new Error('Error')
       } else {
         return response.json()
       }
