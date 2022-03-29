@@ -7,6 +7,7 @@ import Header from './Header'
 import FeatureDisplay from './FeatureDisplay'
 import MovieInfo from './MovieInfo'
 import ErrorDisplay from './Error'
+import { Route } from 'react-router-dom'
 
 
 class App extends Component {
@@ -27,7 +28,6 @@ class App extends Component {
       featureMovie: data.movies[Math.floor(Math.random() * data.movies.length)]}))
     .catch((error) => {
       this.setState({error: error})
-      // console.log('Error:', error)
     })
   }
 
@@ -49,18 +49,31 @@ class App extends Component {
     return (
       <main className='App'>
         <Header />
-        {!this.state.selectedMovie ? <FeatureDisplay movieData={this.state.featureMovie}/> : null}
-        {this.state.selectedMovie ? <MovieInfo movie={this.state.selectedMovie}
-        showAllMovies={this.showAllMovies}/> :
-        <Movies
-        movieData={this.state.movieData}
-        showSingleMovie={this.showSingleMovie}
-        /> }
+        <Route
+          path="/"
+          render={() => {
+            return (
+              <>
+              <FeatureDisplay movieData={this.state.featureMovie} />
+              <Movies movieData={this.state.movieData} showSingleMovie={this.showSingleMovie}/>
+              </>
+            )
+          }}
+        />
         <ErrorDisplay error={this.state.error} />
-      </main>
-    )
+        </main>
+      )
+    }
   }
-}
+
+
+        // {!this.state.selectedMovie ? <FeatureDisplay movieData={this.state.featureMovie}/> : null}
+        // {this.state.selectedMovie ? <MovieInfo movie={this.state.selectedMovie}
+        // showAllMovies={this.showAllMovies}/> :
+        // <Movies
+        // movieData={this.state.movieData}
+        // showSingleMovie={this.showSingleMovie}
+        // /> }
 
 
 export default App;
