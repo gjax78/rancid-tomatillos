@@ -1,21 +1,32 @@
 .featureImage {
   height: 100vh;
   width: 100vw;
-  /* position: relative; */
-  background: fixed;
+  display: block;
+  position: relative;
+  /* background: fixed; */
+  /* margin-top: 0; */
+}
+
+.featureDisplay {
+  display: flex;
+  flex-direction: column;
 }
 
 h1 {
-  text-align: center;
-  position: absolute;
+  position: fixed;
   top: 85vh;
-  width: 100%;
+  left: 40vw;
+  font-family: 'Questrial';
   font-size: 48px;
+  color: white;
 }
 
 h3 {
+  position: fixed;
+  
   text-align: left;
-  position:  absolute;
   margin-left: 2vw;
+  font-family: 'Questrial';
   font-size: 30px;
+  color: white;
 }
