@@ -25,6 +25,15 @@ class App extends Component {
     })
   }
 
+  // randomize = () => {
+  //   console.log(this.state.movieData)
+  //   const randomIndex = Math.floor(Math.random() * this.state.movieData.length);
+  //   const selectedPicture = this.state.movieData[randomIndex]
+  //   // return selectedPicture
+  //   this.setState({ movieData: selectedPicture })
+  //   // console.log(this.state.movieData)
+  // }
+
   showSingleMovie = (id) => {
     const singleMovie = apiData.singleMovieData(id)
     .then(movie => this.setState({selectedMovie: movie.movie}))
@@ -39,9 +48,10 @@ class App extends Component {
 
   render() {
     return (
+      // console.log(movieData)
       <main className='App'>
         <Header />
-        {!this.state.selectedMovie ? <FeatureDisplay movie={this.state.movieData}/> : null}
+        {!this.state.selectedMovie ? <FeatureDisplay movieData={this.state.movieData}/> : null}
         {this.state.selectedMovie ? <MovieInfo movie={this.state.selectedMovie}
         showAllMovies={this.showAllMovies}/> :
         <Movies
