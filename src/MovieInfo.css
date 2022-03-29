@@ -1,9 +1,11 @@
 .movie-backdrop {
-  /* background: cover; */
-  /* position: relative; */
-  /* background:linear-gradient(to bottom,transparent 50%,rgba(0,0,0,.2) 60%,rgba(0,0,0,.7) 100%); */
+  position: relative;
   width: 100vw;
   height: 100vh;
+}
+
+.single-movie-feature-display {
+  position: relative;
 }
 
 .movie-tagline {
