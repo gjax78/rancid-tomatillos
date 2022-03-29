@@ -13,26 +13,20 @@ class App extends Component {
     super()
     this.state = {
       movieData: [],
-      selectedMovie: null
+      selectedMovie: null,
+      featureMovie: ''
     }
   }
 
   componentDidMount = () => {
     apiData.allMovieData()
-    .then(data => this.setState({movieData: data.movies}))
+    .then(data => this.setState({
+      movieData: data.movies,
+      featureMovie: data.movies[Math.floor(Math.random() * data.movies.length)]}))
     .catch((error) => {
       console.log('Error:', error)
     })
   }
-
-  // randomize = () => {
-  //   console.log(this.state.movieData)
-  //   const randomIndex = Math.floor(Math.random() * this.state.movieData.length);
-  //   const selectedPicture = this.state.movieData[randomIndex]
-  //   // return selectedPicture
-  //   this.setState({ movieData: selectedPicture })
-  //   // console.log(this.state.movieData)
-  // }
 
   showSingleMovie = (id) => {
     const singleMovie = apiData.singleMovieData(id)
@@ -43,15 +37,16 @@ class App extends Component {
   }
 
   showAllMovies = () => {
-    this.setState({ selectedMovie: null })
+    this.setState({
+      selectedMovie: null,
+      featureMovie: this.state.movieData[Math.floor(Math.random() * this.state.movieData.length)] })
   }
 
   render() {
     return (
-      // console.log(movieData)
       <main className='App'>
         <Header />
-        {!this.state.selectedMovie ? <FeatureDisplay movieData={this.state.movieData}/> : null}
+        {!this.state.selectedMovie ? <FeatureDisplay movieData={this.state.featureMovie}/> : null}
         {this.state.selectedMovie ? <MovieInfo movie={this.state.selectedMovie}
         showAllMovies={this.showAllMovies}/> :
         <Movies
