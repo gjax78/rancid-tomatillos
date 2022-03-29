@@ -1,0 +1,95 @@
+.movie-backdrop {
+  /* background: cover; */
+  /* position: relative; */
+  /* background:linear-gradient(to bottom,transparent 50%,rgba(0,0,0,.2) 60%,rgba(0,0,0,.7) 100%); */
+  width: 100vw;
+  height: 100vh;
+}
+
+.movie-tagline {
+  position: absolute;
+  text-align: center;
+  top: 85vh;
+  width: 100%;
+  font-size: 20px;
+}
+
+.movie-genres-and-release-date {
+  position: absolute;
+  text-align: center;
+  top: 90vh;
+  width: 100%;
+  font-size: 15px;
+}
+
+.movie-title {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.single-view {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 2%;
+}
+
+.movie-info-container {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+}
+
+.movie-poster {
+  margin: 2%;
+  margin-top: 6%;
+  border-radius: 6px;
+}
+
+.movie-info {
+  margin: 2%;
+  margin-right: 5%;
+  /* margin-top: 5%; */
+  color: #a1a1a6;
+}
+
+.movie-titles {
+  color: white;
+}
+
+.information-title {
+  display: flex;
+  justify-content: center;
+  margin-top: 0px;
+  font-size: 20px;
+  margin-bottom: 18%;
+  color: white;
+}
+
+.movie-overview-container {
+  width: 30%;
+  margin: 2%;
+}
+
+.overview-title {
+  display: flex;
+  justify-content: center;
+  margin-top: 0px;
+  font-size: 20px;
+}
+
+.movie-overview {
+  line-height: 1.5em;
+  margin-left: 5%;
+}
+
+button {
+  font-family: 'Questrial';
+  color: white;
+  background-color: #0a84ff;
+  border-radius: 6px;
+  height: 28px;
+  margin-left: 5px;
+  margin-top: 5px;
+  cursor: pointer;
+  border:none;
+}
