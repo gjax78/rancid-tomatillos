@@ -22,20 +22,12 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    apiData.allMovieData()
+    apiData.allMovieData('https://rancid-tomatillos.herokuapp.com/api/v2/movies/')
     .then(data => this.setState({
       movieData: data.movies,
       featureMovie: data.movies[Math.floor(Math.random() * data.movies.length)]}))
     .catch((error) => {
       this.setState({error: error})
-    })
-  }
-
-  showSingleMovie = (id) => {
-    const singleMovie = apiData.singleMovieData(id)
-    .then(movie => this.setState({selectedMovie: movie.movie}))
-    .catch((error) => {
-      console.log('Error:', error)
     })
   }
 
@@ -50,30 +42,32 @@ class App extends Component {
       <main className='App'>
         <Header />
         <Route
-          path="/"
+          exact path="/"
           render={() => {
             return (
               <>
               <FeatureDisplay movieData={this.state.featureMovie} />
-              <Movies movieData={this.state.movieData} showSingleMovie={this.showSingleMovie}/>
+              <Movies movieData={this.state.movieData}
+              />
               </>
             )
           }}
         />
+        <Route
+          exact path="/:id"
+          render={({ match }) => {
+            return (
+              <MovieInfo
+                movie={this.state.selectedMovie}
+                showAllMovies={this.showAllMovies}
+                id={match.params.id}/>
+            )
+          }}
+          />
         <ErrorDisplay error={this.state.error} />
         </main>
       )
     }
   }
-
-
-        // {!this.state.selectedMovie ? <FeatureDisplay movieData={this.state.featureMovie}/> : null}
-        // {this.state.selectedMovie ? <MovieInfo movie={this.state.selectedMovie}
-        // showAllMovies={this.showAllMovies}/> :
-        // <Movies
-        // movieData={this.state.movieData}
-        // showSingleMovie={this.showSingleMovie}
-        // /> }
-
 
 export default App;
