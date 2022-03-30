@@ -6,6 +6,8 @@ import React, { Component } from 'react'
 import Header from './Header'
 import FeatureDisplay from './FeatureDisplay'
 import MovieInfo from './MovieInfo'
+import ErrorDisplay from './Error'
+import { Route } from 'react-router-dom'
 
 
 class App extends Component {
@@ -14,25 +16,18 @@ class App extends Component {
     this.state = {
       movieData: [],
       selectedMovie: null,
-      featureMovie: ''
+      featureMovie: '',
+      error: ''
     }
   }
 
   componentDidMount = () => {
-    apiData.allMovieData()
+    apiData.allMovieData('https://rancid-tomatillos.herokuapp.com/api/v2/movies/')
     .then(data => this.setState({
       movieData: data.movies,
       featureMovie: data.movies[Math.floor(Math.random() * data.movies.length)]}))
     .catch((error) => {
-      console.log('Error:', error)
-    })
-  }
-
-  showSingleMovie = (id) => {
-    const singleMovie = apiData.singleMovieData(id)
-    .then(movie => this.setState({selectedMovie: movie.movie}))
-    .catch((error) => {
-      console.log('Error:', error)
+      this.setState({error: error})
     })
   }
 
@@ -46,17 +41,33 @@ class App extends Component {
     return (
       <main className='App'>
         <Header />
-        {!this.state.selectedMovie ? <FeatureDisplay movieData={this.state.featureMovie}/> : null}
-        {this.state.selectedMovie ? <MovieInfo movie={this.state.selectedMovie}
-        showAllMovies={this.showAllMovies}/> :
-        <Movies
-        movieData={this.state.movieData}
-        showSingleMovie={this.showSingleMovie}
-        /> }
-      </main>
-    )
+        <Route
+          exact path="/"
+          render={() => {
+            return (
+              <>
+              <FeatureDisplay movieData={this.state.featureMovie} />
+              <Movies movieData={this.state.movieData}
+              />
+              </>
+            )
+          }}
+        />
+        <Route
+          exact path="/:id"
+          render={({ match }) => {
+            return (
+              <MovieInfo
+                movie={this.state.selectedMovie}
+                showAllMovies={this.showAllMovies}
+                id={match.params.id}/>
+            )
+          }}
+          />
+        <ErrorDisplay error={this.state.error} />
+        </main>
+      )
+    }
   }
-}
-
 
 export default App;
