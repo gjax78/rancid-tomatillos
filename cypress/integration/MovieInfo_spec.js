@@ -7,7 +7,11 @@ describe("As a user, I should see a page with a single movies info", () => {
     cy.visit('/718444')
   })
 
-  it("As a user, I should see a movie backdrop", () => {
+  it("As a user, I should see the movie backdrop", () => {
     cy.get('.movie-backdrop').url("https://image.tmdb.org/t/p/original//x4UkhIQuHIJyeeOTdcbZ3t3gBSa.jpg")
+  })
+
+  it("As a user, I should see the movies tagline", () => {
+    cy.get('.movie-tagline').should('have.text', "When the hunter becomes the prey.")
   })
 })
