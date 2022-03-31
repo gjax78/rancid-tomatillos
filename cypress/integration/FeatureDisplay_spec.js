@@ -15,4 +15,8 @@ describe("Header should render", () => {
     cy.get('h3').should('have.text', '')
   })
 
+  it("As a user, I should see the feature movie backdrop", () => {
+    cy.get('.featureImage').should('be.visible')
+  })
+
 })
