@@ -22,4 +22,8 @@ describe("As a user, I should see a page with a single movies info", () => {
   it("As a user, I should see the movies title", () => {
     cy.get('.movie-title').should('have.text', "Rogue")
   })
+
+  it("As a user, I should see the movies poster", () => {
+    cy.get('.movie-poster').url("https://image.tmdb.org/t/p/original//uOw5JD8IlD546feZ6oxbIjvN66P.jpg")
+  })
 })
