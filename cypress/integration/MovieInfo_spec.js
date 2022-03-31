@@ -54,4 +54,8 @@ describe("As a user, I should see a page with a single movies info", () => {
   it("As a user, I should see text that displays the movies genres", () => {
     cy.get('.movie-genres').should('have.text', "Action")
   })
+
+  it("As a user, I should see text that displays the movies overview", () => {
+    cy.get('.movie-overview').should('have.text', "Battle-hardened O’Hara leads a lively mercenary team of soldiers on a daring mission: rescue hostages from their captors in remote Africa. But as the mission goes awry and the team is stranded, O’Hara’s squad must face a bloody, brutal encounter with a gang of rebels.")
+  })
 })
