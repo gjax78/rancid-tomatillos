@@ -42,4 +42,8 @@ describe("As a user, I should see a page with a single movies info", () => {
   it("As a user, I should see text that displays the movie release date", () => {
     cy.get('.movie-release-date').should('have.text', "2020-08-20")
   })
+
+  it("As a user, I should see text that displays the movies average rating", () => {
+    cy.get('.movie-average-rating').should('have.text', "6.571428571428571")
+  })
 })
