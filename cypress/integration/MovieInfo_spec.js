@@ -59,3 +59,17 @@ describe("As a user, I should see a page with a single movies info", () => {
     cy.get('.movie-overview').should('have.text', "Battle-hardened O’Hara leads a lively mercenary team of soldiers on a daring mission: rescue hostages from their captors in remote Africa. But as the mission goes awry and the team is stranded, O’Hara’s squad must face a bloody, brutal encounter with a gang of rebels.")
   })
 })
+
+  describe('As a user, I should be able to return to the home page from the movie page', () => {
+  beforeEach(() => {
+    cy.fixture('AllMovieData.json').then((movies) => {
+      cy.intercept('https://rancid-tomatillos.herokuapp.com/api/v2/movies', movies)
+    })
+    cy.visit("/718444")
+  })
+
+  it('should load home page when back button is clicked', () => {
+    cy.get('.back').click()
+      .url().should('eq', 'http://localhost:3000/')
+  })
+  })
