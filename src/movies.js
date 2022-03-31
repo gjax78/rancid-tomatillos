@@ -1,6 +1,6 @@
 import React from 'react'
-import MovieCard from './movieCard'
-import './movies.css'
+import MovieCard from './MovieCard'
+import './Movies.css'
 import MovieInfo from './MovieInfo'
 
 
