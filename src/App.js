@@ -1,7 +1,7 @@
 import './App.css';
 import apiData from './apiCalls'
-import MovieCard from './movieCard'
-import Movies from './movies'
+import MovieCard from './MovieCard'
+import Movies from './Movies'
 import React, { Component } from 'react'
 import Header from './Header'
 import FeatureDisplay from './FeatureDisplay'
