@@ -26,4 +26,12 @@ describe("As a user, I should see a page with a single movies info", () => {
   it("As a user, I should see the movies poster", () => {
     cy.get('.movie-poster').url("https://image.tmdb.org/t/p/original//uOw5JD8IlD546feZ6oxbIjvN66P.jpg")
   })
+
+  it("As a user, I should see text that displays the word information", () => {
+    cy.get('.information-title').should('have.text', "Information")
+  })
+
+  it("As a user, I should see text that displays the word about", () => {
+    cy.get('.overview-title').should('have.text', "About")
+  })
 })
