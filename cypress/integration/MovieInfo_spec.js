@@ -14,4 +14,10 @@ describe("As a user, I should see a page with a single movies info", () => {
   it("As a user, I should see the movies tagline", () => {
     cy.get('.movie-tagline').should('have.text', "When the hunter becomes the prey.")
   })
+
+  it("As a user, I should see the movies genre and release date", () => {
+    cy.get('.movie-genres-and-release-date').should('have.text', "Action · 2020-08-20")
+  })
+
+  
 })
