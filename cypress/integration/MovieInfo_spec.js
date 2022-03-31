@@ -46,4 +46,8 @@ describe("As a user, I should see a page with a single movies info", () => {
   it("As a user, I should see text that displays the movies average rating", () => {
     cy.get('.movie-average-rating').should('have.text', "6.571428571428571")
   })
+
+  it("As a user, I should see text that displays the movies average rating", () => {
+    cy.get('.movie-runtime').should('have.text', "106")
+  })
 })
