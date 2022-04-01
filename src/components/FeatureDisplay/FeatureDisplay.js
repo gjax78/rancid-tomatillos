@@ -11,4 +11,4 @@ const FeatureDisplay = ({ movieData }) => {
   )
 }
 
-export default FeatureDisplay
+export default FeatureDisplay;

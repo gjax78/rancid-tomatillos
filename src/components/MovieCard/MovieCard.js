@@ -12,4 +12,4 @@ const MovieCard = ({ id, title, poster_path}) => {
   )
 }
 
-export default MovieCard
+export default MovieCard;

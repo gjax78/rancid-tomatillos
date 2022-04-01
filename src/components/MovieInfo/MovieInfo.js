@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import './MovieInfo.css';
+import React, { Component } from 'react'
+import './MovieInfo.css'
 import { Link } from 'react-router-dom'
 import apiData from '../../apiCalls'
 import ErrorDisplay from '../Error/Error'
