@@ -1,5 +1,5 @@
 import React from 'react'
-import './movieCard.css'
+import './MovieCard.css'
 import { Link } from 'react-router-dom'
 
 const MovieCard = ({ id, title, poster_path}) => {
