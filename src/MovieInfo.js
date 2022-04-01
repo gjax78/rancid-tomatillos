@@ -24,7 +24,9 @@ class MovieInfo extends Component {
     render() {
       if (this.state.error) {
         return (
-        <ErrorDisplay error={this.props.error} />
+          <div className='error-main'>
+            <ErrorDisplay error={this.state.error} />
+          </div>
         )
       } else {
       return (
