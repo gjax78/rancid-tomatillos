@@ -1,12 +1,12 @@
 import './App.css';
-import apiData from './apiCalls'
-import MovieCard from './MovieCard'
-import Movies from './Movies'
+import apiData from '../../apiCalls'
+import MovieCard from '../MovieCard/MovieCard'
+import Movies from '../Movies/Movies'
 import React, { Component } from 'react'
-import Header from './Header'
-import FeatureDisplay from './FeatureDisplay'
-import MovieInfo from './MovieInfo'
-import ErrorDisplay from './Error'
+import Header from '../Header/Header'
+import FeatureDisplay from '../FeatureDisplay/FeatureDisplay'
+import MovieInfo from '../MovieInfo/MovieInfo'
+import ErrorDisplay from '../Error/Error'
 import { Route } from 'react-router-dom'
 
 
@@ -42,7 +42,7 @@ class App extends Component {
       <main className='App'>
         <Header />
         <Route
-          exact path="/"
+          exact path='/'
           render={() => {
             return (
               <>
@@ -53,7 +53,7 @@ class App extends Component {
           }}
         />
         <Route
-          exact path="/:id"
+          exact path='/:id'
           render={({ match }) => {
             return (
               <MovieInfo

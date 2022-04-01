@@ -1,0 +1,8 @@
+.movies-container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1rem;
+  padding: 5%;
+  align-content: center;
+  justify-content: space-around;
+}

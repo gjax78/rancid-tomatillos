@@ -1,7 +1,7 @@
 import React from 'react'
-import MovieCard from './MovieCard'
+import MovieCard from '../MovieCard/MovieCard'
 import './Movies.css'
-import MovieInfo from './MovieInfo'
+import MovieInfo from '../MovieInfo/MovieInfo'
 
 
 const Movies = ({ movieData }) => {
