@@ -22,11 +22,22 @@ class MovieInfo extends Component {
       })
     }
 
+    // formatDate() {
+    //   let newDate = this.state.selectedMovie.release_date
+    //   return newDate.split('-')[0]
+    // }
+
     getInfo(info) {
       return this.state.selectedMovie[info]
     }
 
     render() {
+      let movieYear = new Date(this.state.selectedMovie.release_date);
+      movieYear = movieYear.getFullYear();
+
+      let genres = this.state.selectedMovie.genres?.join(' · ')
+
+
       if (this.state.error) {
         return (
           <div className='error-main'>
@@ -43,7 +54,7 @@ class MovieInfo extends Component {
             alt={'current movie backdrop'}
           />
           <p className='movie-tagline'>{this.getInfo('tagline')}</p>
-          <p className='movie-genres-and-release-date'>{this.getInfo('genres')} · {this.getInfo('release_date')}</p>
+          <p className='movie-genres-and-release-date'>{genres} · {movieYear}</p>
           <Link to='/'>
             <button className='back' onClick={this.props.showAllMovies}>Back</button>
           </Link>
@@ -66,7 +77,7 @@ class MovieInfo extends Component {
              <p className='movie-titles'>Average Runtime</p>
              <p className='movie-runtime'>{this.getInfo('runtime')}</p>
              <p className='movie-titles'>Genres</p>
-             <p className='movie-genres'>{this.getInfo('genres')}</p>
+             <p className='movie-genres'>{genres}</p>
            </div>
            <div className='movie-overview-container'>
              <p className='overview-title'>About</p>
