@@ -1,10 +1,9 @@
 import React from 'react'
+import './Error.css'
 
 const ErrorDisplay = ({ error }) => {
-  let newError = 'Something went wrong'
-
   return (
-    <p className='error'>{newError}</p>
+    <p className='error' >{`${error}`}</p>
   )
 }
 
