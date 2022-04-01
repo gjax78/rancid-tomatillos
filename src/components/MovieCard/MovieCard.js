@@ -16,6 +16,7 @@ const MovieCard = ({ id, title, poster_path}) => {
 export default MovieCard;
 
 MovieCard.propTypes = {
+  id: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
   poster_path: PropTypes.string.isRequired
 }
