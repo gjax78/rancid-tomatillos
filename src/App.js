@@ -46,9 +46,8 @@ class App extends Component {
           render={() => {
             return (
               <>
-              <FeatureDisplay movieData={this.state.featureMovie} />
-              <Movies movieData={this.state.movieData}
-              />
+                <FeatureDisplay movieData={this.state.featureMovie} />
+                <Movies movieData={this.state.movieData} />
               </>
             )
           }}
@@ -64,7 +63,7 @@ class App extends Component {
             )
           }}
           />
-        <ErrorDisplay error={this.state.error} />
+          {this.state.error && <ErrorDisplay error={this.state.error} /> }
         </main>
       )
     }
