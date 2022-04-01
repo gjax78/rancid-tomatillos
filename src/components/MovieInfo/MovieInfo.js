@@ -22,11 +22,6 @@ class MovieInfo extends Component {
       })
     }
 
-    // formatDate() {
-    //   let newDate = this.state.selectedMovie.release_date
-    //   return newDate.split('-')[0]
-    // }
-
     getInfo(info) {
       return this.state.selectedMovie[info]
     }
@@ -37,6 +32,7 @@ class MovieInfo extends Component {
 
       let genres = this.state.selectedMovie.genres?.join(' · ')
 
+      let averageRating = this.state.selectedMovie.average_rating?.toFixed(1)
 
       if (this.state.error) {
         return (
@@ -71,9 +67,9 @@ class MovieInfo extends Component {
            <div className='movie-info'>
              <p className='information-title'>Information</p>
              <p className='movie-titles'>Release Date</p>
-             <p className='movie-release-date'>{this.getInfo('release_date')}</p>
+             <p className='movie-release-date'>{movieYear}</p>
              <p className='movie-titles'>Average Rating</p>
-             <p className='movie-average-rating'>{this.getInfo('average_rating')}</p>
+             <p className='movie-average-rating'>{averageRating}</p>
              <p className='movie-titles'>Average Runtime</p>
              <p className='movie-runtime'>{this.getInfo('runtime')}</p>
              <p className='movie-titles'>Genres</p>
@@ -87,9 +83,9 @@ class MovieInfo extends Component {
        </section>
 
        </div>
-     )
+      )
     }
-   }
   }
+}
 
 export default MovieInfo;
