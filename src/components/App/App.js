@@ -42,7 +42,7 @@ class App extends Component {
       <main className='App'>
         <Header />
         <Route
-          exact path="/"
+          exact path='/'
           render={() => {
             return (
               <>
@@ -53,7 +53,7 @@ class App extends Component {
           }}
         />
         <Route
-          exact path="/:id"
+          exact path='/:id'
           render={({ match }) => {
             return (
               <MovieInfo
