@@ -24,7 +24,6 @@ const Movies = ({ movieData, isLoading }) => {
     <div className='movies-container'>
       {movieCards}
     </div>
-  
 }
 
 export default Movies
