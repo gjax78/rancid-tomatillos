@@ -2,9 +2,11 @@ import React from 'react'
 import MovieCard from '../MovieCard/MovieCard'
 import './Movies.css'
 import MovieInfo from '../MovieInfo/MovieInfo'
+import Spinner from '../Spinner/Spinner'
 
 
-const Movies = ({ movieData }) => {
+const Movies = ({ movieData, isLoading }) => {
+
   const movieCards = movieData.map(movie => {
     return (
       <MovieCard
@@ -16,11 +18,13 @@ const Movies = ({ movieData }) => {
     )
   })
 
-  return (
+  return isLoading ? (
+    <Spinner />
+  ) :
     <div className='movies-container'>
       {movieCards}
     </div>
-  )
+  
 }
 
 export default Movies
