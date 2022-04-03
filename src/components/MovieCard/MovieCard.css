@@ -6,6 +6,6 @@ img {
 }
 
 .movieCard:hover {
-  filter: brightness(85%);
+  filter: brightness(70%);
   cursor: pointer;
 }
