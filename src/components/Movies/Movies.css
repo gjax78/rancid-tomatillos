@@ -21,6 +21,7 @@
 
 @media screen and (max-width: 500px) {
   .movies-container {
+    text-align: center;
     grid-template-columns: 75%;
   }
 }
