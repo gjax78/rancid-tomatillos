@@ -17,6 +17,16 @@ h1 {
   color: white;
 }
 
+h3 {
+  position: absolute;
+  text-align: left;
+  top: 1vh;
+  margin-left: 2vw;
+  font-family: 'Questrial';
+  font-size: 30px;
+  color: white;
+}
+
 @media screen and (max-width: 500px) {
   h1 {
     font-size: 30px;
@@ -31,14 +41,4 @@ h1 {
     left: 40vw;
     font-size: 48px;
   }
-}
-
-h3 {
-  position: absolute;
-  text-align: left;
-  top: 1vh;
-  margin-left: 2vw;
-  font-family: 'Questrial';
-  font-size: 30px;
-  color: white;
 }
