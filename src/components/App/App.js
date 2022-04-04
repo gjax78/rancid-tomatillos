@@ -18,7 +18,8 @@ class App extends Component {
       selectedMovie: null,
       featureMovie: '',
       error: '',
-      isLoading: true
+      isLoading: true,
+      featureVideo: ''
     }
   }
 
@@ -33,6 +34,18 @@ class App extends Component {
       this.setState({error: error})
     })
   }
+
+  componentDidMount = () => {
+    apiData.allMovieData(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${this.featureMovie.id}/videos`)
+    .then(data => this.setState({
+      featureVideo: data[Math.floor(Math.random() * data.length)]
+    }))
+    .catch((error) => {
+      this.setState({error: error})
+    })
+  }
+
+
 
   showAllMovies = () => {
     this.setState({
