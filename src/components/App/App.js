@@ -63,7 +63,7 @@ class App extends Component {
           render={() => {
             return (
               <>
-                <FeatureDisplay movieData={this.state.featureMovie} />
+                <FeatureDisplay movieData={this.state.featureMovie} featureVid={this.state.featureVideo} />
                 <Movies isLoading={this.state.isLoading} movieData={this.state.movieData} />
               </>
             )
