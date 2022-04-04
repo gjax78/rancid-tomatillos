@@ -54,7 +54,6 @@ class MovieInfo extends Component {
         <Link to='/'>
           <button className='back' onClick={this.props.showAllMovies}>Back</button>
         </Link>
-       <h2 className='movie-title'>{this.getInfo('title')}</h2>
       </section>
 
 
@@ -64,24 +63,38 @@ class MovieInfo extends Component {
             src={this.getInfo('poster_path')}
             alt={'current movie poster'}
           />
+          <div className='information-div'>
+
+          <p className='information-title'>Information</p>
           <div className='movie-info'>
-            <p className='information-title'>Information</p>
             <p className='movie-titles'>Release Date</p>
             <p className='movie-release-date'>{movieYear}</p>
             <p className='movie-titles'>Average Rating</p>
             <p className='movie-average-rating'>{averageRating}</p>
             <p className='movie-titles'>Average Runtime</p>
-            <p className='movie-runtime'>{this.getInfo('runtime')}</p>
+            <p className='movie-runtime'>{this.getInfo('runtime')} min</p>
             <p className='movie-titles'>Genres</p>
             <p className='movie-genres'>{genres}</p>
           </div>
-          <div className='movie-overview-container'>
+          </div>
+          <div className='darker-div'>
             <p className='overview-title'>About</p>
-            <p className='movie-overview'>{this.getInfo('overview')}</p>
+            <div className='movie-overview-container'>
+            <h2 className='movie-title'>{this.getInfo('title')}</h2>
+              <p className='movie-overview'>{this.getInfo('overview')}</p>
+              <span class="badge">TV-MA</span>
+              <span class="badge">CC</span>
+              <span class="badge">AD</span>
+              <span class="badge">SDH</span>
+              <span class="badge">4K</span>
+            </div>
           </div>
         </div>
       </section>
-
+      <section className='copyright'>
+        <p className='copyright-title'>Copyright 2022 Rancid Tomatillos Inc. All rights reserved.</p>
+        <p className='links'>Service Teams <span style={{opacity: .6}}>|</span> Rancid Tomatillo TV & Privacy <span style={{opacity: .6}}>|</span> Cookies <span style={{opacity: .6}}>|</span> Support</p>
+      </section>
       </div>
       )
     }

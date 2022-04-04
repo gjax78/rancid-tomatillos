@@ -2,7 +2,6 @@
   height: 100vh;
   width: 100vw;
   background: fixed;
-
 }
 
 .featureDisplay {
@@ -16,6 +15,22 @@ h1 {
   font-family: 'Questrial';
   font-size: 48px;
   color: white;
+}
+
+@media screen and (max-width: 500px) {
+  h1 {
+    font-size: 30px;
+    left: 15vw;
+    top: 85vh;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  h1 {
+    top: 80vh;
+    left: 40vw;
+    font-size: 48px;
+  }
 }
 
 h3 {
