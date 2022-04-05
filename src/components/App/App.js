@@ -16,9 +16,8 @@ class App extends Component {
     this.state = {
       movieData: [],
       selectedMovie: null,
-      featureMovie: '',
       error: '',
-      isLoading: true
+      isLoading: true,
     }
   }
 
@@ -26,8 +25,7 @@ class App extends Component {
     apiData.allMovieData('https://rancid-tomatillos.herokuapp.com/api/v2/movies/')
     .then(data => this.setState({
       movieData: data.movies,
-      featureMovie: data.movies[Math.floor(Math.random() * data.movies.length)],
-      isLoading: false
+      isLoading: false,
     }))
     .catch((error) => {
       this.setState({error: error})
@@ -50,8 +48,11 @@ class App extends Component {
           render={() => {
             return (
               <>
-                <FeatureDisplay movieData={this.state.featureMovie} />
-                <Movies isLoading={this.state.isLoading} movieData={this.state.movieData} />
+                <FeatureDisplay />
+                <Movies
+                isLoading={this.state.isLoading}
+                movieData={this.state.movieData}
+                />
               </>
             )
           }}
